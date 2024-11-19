@@ -60,21 +60,23 @@ const GET_TICKETS_URL="https://api.quicksell.co/v1/internal/frontend-assignment"
 
   return (  
     <div className="App">  
-      <Header   
+    {loading ? (  
+        <Loader />  
+      ) : (   <>
+        <Header   
         grouping={grouping}   
         setGrouping={onSetGrouping}   
         ordering={ordering}   
         setOrdering={onSetOrdering}   
       />  
-      {loading ? (  
-        <Loader />  
-      ) : (  
+     
         <Grid   
           gridData={gridData}   
           grouping={grouping}   
           userIdToData={userData}   
-        />  
-      )}  
+        />  </>
+    
+       
     </div>  
   );  
 }  
